@@ -6,8 +6,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:ptc_quiz/screens/home/home_screen.dart';
 import '../core/utils/app_router.dart';
-import '../question1/models/manual_model.dart';
-import '../question1/models/using_ai.dart';
+import '../question1/models/manual_model/manual_model.dart';
+import '../question1/models/ai_model/using_ai.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -23,9 +23,11 @@ class MyApp extends StatelessWidget {
   }
 }
 
+
+
+
 class PTCQuizApp extends StatelessWidget {
   const PTCQuizApp({super.key});
-
 
 
   // please switch the path..
@@ -34,7 +36,7 @@ class PTCQuizApp extends StatelessWidget {
    Future<String> _loadAsset() async
   {
 
-    return await rootBundle.loadString('assets/test2.json');
+    return await rootBundle.loadString('assets/test1.json');
    }
    
 
@@ -43,8 +45,8 @@ class PTCQuizApp extends StatelessWidget {
     String jsonString = await _loadAsset();
     var json =jsonDecode(jsonString);
 
-     // ManualModel  model = ManualModel.fromJson(json);
-    UseAIModel model = UseAIModel.fromJson(json);
+     ManualModel  model = ManualModel.fromJson(json);
+    //UseAIModel model = UseAIModel.fromJson(json);
        print(model.toString());
     
    }
