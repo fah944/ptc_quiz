@@ -3,6 +3,8 @@ import 'package:ptc_quiz/question2/screens/category/category_screen.dart';
 import 'package:ptc_quiz/question2/screens/lang/lang_screen.dart';
 import 'package:ptc_quiz/question2/screens/venues/venues_screen.dart';
 
+import '../../question3/user_screen.dart';
+
 
 class HomeScreen extends StatefulWidget {
    HomeScreen({super.key});
@@ -21,6 +23,7 @@ class _HomeScreenState extends State<HomeScreen> {
      CategoryScreen(),
      VenuesScreen(),
      LangScreen(),
+     UserScreen()
    ];
 
   @override
@@ -40,6 +43,7 @@ class _HomeScreenState extends State<HomeScreen> {
           BottomNavigationBarItem(icon: Icon(Icons.add_home_rounded),  label:'Category' ),
           BottomNavigationBarItem(icon:Icon(Icons.access_time_sharp),  label:'Venues' ),
           BottomNavigationBarItem(icon: Icon(Icons.language_rounded),  label: 'lang'),
+          BottomNavigationBarItem(icon: Icon(Icons.person),  label:'User' ),
         ],
         elevation: 4,
       ),
