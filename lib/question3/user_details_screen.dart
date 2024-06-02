@@ -13,6 +13,9 @@ class UserDetailsScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('User Details'),
+        actions: [
+          IconButton(
+         icon: Icon( Icons.arrow_back,),onPressed: (){Navigator.pop(context);},)],
       ),
       body: userData != null 
           ? Padding(
