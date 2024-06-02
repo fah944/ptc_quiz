@@ -13,14 +13,7 @@ getUserById(int? id){
   return user;
 }
 
-/*
- Future<List<String>> getUser() async {
-  List<String> items;
-  String filePath = "assets/json/usrs.json";
-  String jsonString = await rootBundle.loadString(filePath);
-  items = List<String>.from(json.decode(jsonString));
-  return items;
-}*/
+
 
 
 
