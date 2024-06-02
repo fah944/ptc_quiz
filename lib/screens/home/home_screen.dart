@@ -31,6 +31,7 @@ class _HomeScreenState extends State<HomeScreen> {
     return  Scaffold(
       body: screens[curIndex],
       bottomNavigationBar: BottomNavigationBar(
+        type: BottomNavigationBarType.fixed,
         selectedItemColor: Colors.blue,
         currentIndex: curIndex,
         onTap: (index) {

@@ -1,50 +1,56 @@
 import 'package:flutter/material.dart';
-
-import 'model/user_model.dart';
+import 'package:ptc_quiz/question3/get_user.dart';
 
 class UserDetailsScreen extends StatelessWidget {
-  final UserModel user;
+  final int id;
 
-  UserDetailsScreen({required this.user});
+  UserDetailsScreen({required this.id});
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-     /*  user={
-    "id":id,
-    "first_name":faker.person.firstName(),
-    "last_name":faker.person.lastName(),
-    "about":faker.lorem.words(3).join(' '),
-    "image":faker.image.image(),
-  };*/
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Row(
-              children: [
-                CircleAvatar(
-                  radius: 50,
-                  backgroundImage: AssetImage(""),//user.image
-                ),
-                const SizedBox(width: 10,),
-                const Text(
-              "complete name",
-              style:  TextStyle(fontSize: 18),
-            ),
-              ],
-            ),
+    Map<String, dynamic>? userData = getUserById(id); 
 
-            const SizedBox(height: 20),
-            const Text(
-              "about",
-              style:TextStyle(fontSize: 18),
-            ),
-          
-          ],
-        ),
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('User Details'),
       ),
+      body: userData != null 
+          ? Padding(
+              padding: const EdgeInsets.all(20),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Row(
+                    children: [
+                      CircleAvatar(
+                        radius: 50,
+                        backgroundImage: AssetImage(userData['image']),
+                      ),
+                      const SizedBox(width: 10),
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                        
+                      Text(
+                      '${userData['first_name']} ${userData['last_name']}',
+                       style:const TextStyle(fontSize: 18),
+                      ),
+                      const SizedBox(height: 10),
+                      Text(
+                      userData['about'],
+                      style:  const TextStyle(fontSize: 16),
+                     ),
+                 ],)
+                    ],
+                  ),
+                
+                 
+                ],
+              ),
+            )
+          : const Center(
+              child: Text('User not found'),
+            ),
     );
   }
 }
-

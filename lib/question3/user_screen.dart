@@ -44,7 +44,7 @@ class UserScreen extends StatelessWidget {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => UserDetailsScreen(user: users[index]),
+                        builder: (context) => UserDetailsScreen(id: users[index].id),
                       ),
                     );
                   },
