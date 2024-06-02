@@ -4,6 +4,7 @@ import '../../screens/home/home_screen.dart';
 
 class AppRouter{
   static final router =<String,WidgetBuilder>{
-    HomeScreen.route:(context) => const HomeScreen(),
+    HomeScreen.route:(context) =>  HomeScreen(),
+
   };
 }

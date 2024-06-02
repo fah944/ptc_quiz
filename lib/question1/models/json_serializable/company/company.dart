@@ -6,7 +6,7 @@ import '../../../../helper/date_time_helper.dart';
 
 part 'company.g.dart';
 @JsonSerializable()
-class Company
+class Company with DateFormatter
 {
   @JsonKey(name: "isActive")
   int isActive;
@@ -34,7 +34,7 @@ class Company
 
    @override
   String toString() {
-    return " isActive is $isActive ,name is $name ,addressModel : $addressModel ,established in ${DateTimeHelper.formatDateToUTC(established)}, departmentModel : $departments  ";
+    return " isActive is $isActive ,name is $name ,addressModel : $addressModel ,established in  ${toUTC(established)}, departmentModel : $departments  ";
   }
 }
 

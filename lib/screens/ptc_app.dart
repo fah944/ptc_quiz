@@ -6,8 +6,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:ptc_quiz/screens/home/home_screen.dart';
 import '../core/utils/app_router.dart';
+import '../question1/models/freezed_model/using_freezed/using_freezed.dart';
+import '../question1/models/json_serializable/json_serial/json_serial.dart';
 import '../question1/models/manual_model/manual_model.dart';
 import '../question1/models/ai_model/using_ai.dart';
+
+
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -36,7 +40,7 @@ class PTCQuizApp extends StatelessWidget {
    Future<String> _loadAsset() async
   {
 
-    return await rootBundle.loadString('assets/test1.json');
+    return await rootBundle.loadString('assets/json/test1.json');
    }
    
 
@@ -44,12 +48,22 @@ class PTCQuizApp extends StatelessWidget {
    {
     String jsonString = await _loadAsset();
     var json =jsonDecode(jsonString);
-
+     //I
      ManualModel  model = ManualModel.fromJson(json);
-    //UseAIModel model = UseAIModel.fromJson(json);
-       print(model.toString());
+
+     //II
+     //UseAIModel model = UseAIModel.fromJson(json);
+
+     //III
+     //JsonFreezedModel model = JsonFreezedModel.fromJson(json);
+     
+     //IIII
+     //JsonSerialModel model = JsonSerialModel.fromJson(json);
+        print(model.toString());
+       
     
    }
+
 
 
   @override

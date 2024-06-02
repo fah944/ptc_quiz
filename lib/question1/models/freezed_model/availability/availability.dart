@@ -11,9 +11,5 @@ class Availability with _$Availability{
   const factory Availability({required bool online,required bool inStore}) =_Availability;
 
   factory Availability.fromJson(Map<String,dynamic> json) => _$AvailabilityFromJson(json);
-/*
-  @override
-  String toString() {
-    return " online is $online,inStore is $inStore";
-  }*/
+
 }

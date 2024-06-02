@@ -2,7 +2,7 @@ import 'package:ptc_quiz/helper/date_time_helper.dart';
 import 'package:ptc_quiz/question1/models/ai_model/address_model.dart';
 import 'package:ptc_quiz/question1/models/ai_model/department_model.dart';
 
-class Company {
+class Company with DateFormatter{
     int isActive;
     String name;
     Address? address;
@@ -35,6 +35,6 @@ class Company {
 
       @override
   String toString() {
-    return "isActive $isActive ,name $name, address $address, established ${DateTimeHelper.formatDateToUTC(established)},departments $departments";
+    return "isActive $isActive ,name $name, address $address, established  ${toUTC(established)} ,departments $departments";
   }
 }

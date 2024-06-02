@@ -1,6 +1,6 @@
 
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:ptc_quiz/question1/models/freezed/company/comp.dart';
+import 'package:ptc_quiz/question1/models/freezed_model/company/comp.dart';
 
 part 'using_freezed.freezed.dart'; 
 part 'using_freezed.g.dart'; 
@@ -12,9 +12,5 @@ class JsonFreezedModel with _$JsonFreezedModel{
 
   factory JsonFreezedModel.fromJson(Map<String,dynamic> json)=>_$JsonFreezedModelFromJson(json);
 
-/*
-  @override
-  String toString() {
-    return " companyModel : ${company.toString()}";
-  }*/
+
 }

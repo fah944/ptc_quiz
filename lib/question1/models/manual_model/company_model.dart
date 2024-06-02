@@ -3,7 +3,7 @@ import '../../../helper/date_time_helper.dart';
 import 'address_model.dart';
 import 'department_model.dart';
 
-class CompanyModel
+class CompanyModel with DateFormatter
 {
   int isActive;
   String name;
@@ -35,7 +35,9 @@ class CompanyModel
 
    @override
   String toString() {
-    return " isActive is $isActive ,name is $name ,addressModel : $addressModel ,established in ${DateTimeHelper.formatDateToUTC(established)}, departmentModel : $departments  ";
+
+    ///${DateTimeHelper.formatDateToUTC(established)}
+    return " isActive is $isActive ,name is $name ,addressModel : $addressModel ,established in ${toUTC(established)}, departmentModel : $departments  ";
   }
 }
 

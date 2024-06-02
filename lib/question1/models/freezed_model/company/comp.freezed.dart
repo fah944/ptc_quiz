@@ -167,7 +167,7 @@ class _$CompImpl implements _Comp {
   const _$CompImpl(
       {required this.isActive,
       required this.name,
-      this.addressModel,
+      required this.addressModel,
       required this.established,
       required final List<Department> departments})
       : _departments = departments;
@@ -235,7 +235,7 @@ abstract class _Comp implements Comp {
   const factory _Comp(
       {required final int isActive,
       required final String name,
-      final Address? addressModel,
+      required final Address? addressModel,
       required final String established,
       required final List<Department> departments}) = _$CompImpl;
 
